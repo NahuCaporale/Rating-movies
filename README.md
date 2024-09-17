@@ -5,5 +5,4 @@ a traves de el id de user y la clave foranea user_id en la tabla reviews, por lo
  # Diagrama de relaciones
 ![](https://github.com/NahuCaporale/Rating-movies/blob/master/Diagrama_relaciones_db.png)
  # Integrantes
--Nahuel Caporale
--Geronimo Moroni
+ Nahuel Caporale y Geronimo Moroni
