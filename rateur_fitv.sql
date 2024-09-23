@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-09-2024 a las 23:58:55
+-- Tiempo de generación: 23-09-2024 a las 23:58:10
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -66,27 +66,6 @@ INSERT INTO `shows` (`id`, `title`, `genre`, `release_date`) VALUES
 (2, 'Paths of Glory', 'Action', '1957-12-20'),
 (3, '12 Angry Men', 'Suspense/Crime', '1957-11-07');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `user` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(120) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
---
--- Volcado de datos para la tabla `user`
---
-
-INSERT INTO `user` (`id`, `user`, `password`, `email`) VALUES
-(1, 'nau', '', 'nahucaporale21@gmail.com'),
-(2, 'tomi2k', '', 'tomi2k21@gmail.com');
-
 --
 -- Índices para tablas volcadas
 --
@@ -106,14 +85,6 @@ ALTER TABLE `shows`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD KEY `user` (`user`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -130,12 +101,6 @@ ALTER TABLE `shows`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- Restricciones para tablas volcadas
 --
 
@@ -143,8 +108,7 @@ ALTER TABLE `user`
 -- Filtros para la tabla `reviews`
 --
 ALTER TABLE `reviews`
-  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`show_id`) REFERENCES `shows` (`id`),
-  ADD CONSTRAINT `reviews_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`show_id`) REFERENCES `shows` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
