@@ -104,11 +104,11 @@ class categoriasControlador
                     exit();
                 } else {
                     //si no salta a este error
-                    return $this->vista->mostrarError("Error al actualizar la película.");
+                    return $this->vista->mostrarError("Error al actualizar la categoria.");
                 }
             }
         } else {
-            $this->vista->mostrarError("Película no encontrada.");
+            $this->vista->mostrarError("Categoria no encontrada.");
         }
     }
 }
