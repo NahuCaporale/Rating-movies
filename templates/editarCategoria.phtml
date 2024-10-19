@@ -1,0 +1,18 @@
+<h1 class="text-center">Editar Categoria</h1>
+<form method="POST" action="<?= BASE_URL ?>editarCategoria/<?php echo $categoria->id; ?>">
+    <div class="col-7">
+        <div class="form-group ">
+
+            <div class="col-7">
+                <div class="form-group">
+                    <label class="parrafo" for="categoria_id">Categoría</label>
+                    <input class="form-control mx-auto " type="text" name="nombre" id="titulo" value="<?php echo htmlspecialchars($categoria->nombre); ?>" required>
+                    </div>
+            </div>
+            <label class="parrafo" for="descripcion">Descripción</label>
+            <input class="form-control mx-auto " type="text" name="descripcion" id="titulo" value="<?php echo htmlspecialchars($categoria->descripcion); ?>" required>
+
+        </div>
+    </div>
+    <button type="submit" class="btn btn-warning mt-2">Actualizar Categoria</button>
+</form>

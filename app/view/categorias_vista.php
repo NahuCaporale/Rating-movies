@@ -16,12 +16,18 @@ class categoriasVista{
         require_once "templates/footer.phtml";
 
     }
+    
     //Pregunta si de verdad queremos eliminar una categoria con peliculas dentro(Como usamos cascade on delete tuvimos que hacer esta confirmacion)
     public function confirmacionEliminacion($categoria){
         require "templates/header.phtml";
-        require "templates/eliminar.phtml";
+        require "templates/eliminarDefinitivo.phtml";
         require_once "templates/footer.phtml";
 
+    }
+    public function mostrarFormEditar($categoria){
+        require "templates/header.phtml";
+        require "templates/editarCategoria.phtml";
+        require_once "templates/footer.phtml";
     }
     //Mostrar la categoria y su descripcion con las peliculas
     public function verCategoria($shows,$desc){

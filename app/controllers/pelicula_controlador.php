@@ -76,6 +76,10 @@ class peliculaControlador
         $peli = $this->modelo->obtenerPelicula($id);
 
         if (!empty($peli)) {
+            //tuvimos que incluir esta linea de codigo, porque el footer se enviaba antes de hacer el redirect y 
+            //nos causaba un error en pantalla aunque se actualizaba correctamente la pelicula
+            ob_start();
+
             $categorias = $this->modeloCategorias->obtenerCategorias(); // Obtener categorías para el formulario
 
             $this->vista->mostrarFormularioEditar($peli, $categorias);
@@ -93,11 +97,11 @@ class peliculaControlador
                 if ($editar) {
                     //si editar es true se edito la pelicula
                     header('Location: ' . BASE_URL . 'verPeliculas');
-                    exit();
                 } else {
                     //si no salta a este error
                     return $this->vista->mostrarError("Error al actualizar la película.");
                 }
+                ob_end_flush();
             }
         } else {
             $this->vista->mostrarError("Película no encontrada.");

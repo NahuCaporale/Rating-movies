@@ -67,6 +67,12 @@ switch ($params[0]) {
         $controlador = new categoriasControlador($res);
         $controlador->eliminarCategoriaDefinitivo($params[1]);
         break;
+    case 'editarCategoria':
+        sessionAuth($res);
+        verifyAuth($res);
+        $controller = new categoriasControlador($res);
+        $controller->editarCategoria($params[1]);
+        break;
     case 'verPeliculas':
         sessionAuth($res);
         $controlador = new peliculaControlador($res);

@@ -81,4 +81,34 @@ class categoriasControlador
         $this->modelo->eliminarCategoria($id);
         header('Location: ' . BASE_URL);
     }
+
+    public function editarCategoria($id)
+    {
+        $cat = $this->modelo->obtenerCategoria($id);
+
+        if (!empty($cat)) {
+
+            $this->vista->mostrarFormEditar($cat);
+            if (!empty($_POST['nombre'])) {
+
+
+                $nombre = $_POST['nombre'];
+                $descripcion = $_POST['descripcion'];
+
+                // actualiza la peli
+                $editar = $this->modelo->actualizarCategoria($id, $nombre, $descripcion);
+
+                if ($editar) {
+                    //si editar es true se edito la pelicula
+                    header('Location: ' . BASE_URL . 'categorias');
+                    exit();
+                } else {
+                    //si no salta a este error
+                    return $this->vista->mostrarError("Error al actualizar la película.");
+                }
+            }
+        } else {
+            $this->vista->mostrarError("Película no encontrada.");
+        }
+    }
 }

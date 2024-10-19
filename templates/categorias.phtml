@@ -7,8 +7,12 @@
             <div class=" d-flex justify-content align-items-center">
                 <a href="categoria/<?php echo $categoria->id; ?>" class="catStyle text-decoration-none text-reset"><?php echo htmlspecialchars($categoria->nombre); ?></a>
                 <?php if ($this->usuario) { ?>
-                    <a href="eliminarCategoria/<?php echo $categoria->id; ?>" class="btn btn-danger ms-5">
+                    
+                    <a href="eliminarCategoria/<?php echo $categoria->id; ?>" class="btn btn-danger ms-5 ">
                         Borrar
+                    </a>
+                    <a href="editarCategoria/<?php echo $categoria->id; ?>" class="btn btn-warning ">
+                        Editar
                     </a>
                 <?php } ?>
             </div>

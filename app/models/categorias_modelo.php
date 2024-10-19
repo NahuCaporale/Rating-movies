@@ -47,4 +47,9 @@ class categoriasModelo extends Model
         $query = $this->db->prepare('DELETE FROM  categories WHERE  id = ?');
         $query->execute([$id]);
     }
+    public function actualizarCategoria($id, $nombre, $descripcion)
+    {
+        $query = $this->db->prepare('UPDATE  categories SET nombre = ?,  descripcion= ? WHERE id = ?');
+        return $query->execute([$nombre, $descripcion,$id]);
+    }
 }
