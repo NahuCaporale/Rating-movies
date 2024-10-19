@@ -1,0 +1,33 @@
+<div class="container">
+    <!-- imagen -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <img src="<?php echo htmlspecialchars($pelicula->image_url); ?>"
+                class="img-fluid w-100"
+                alt="Imagen de <?php echo htmlspecialchars($pelicula->title); ?>"
+                style="max-height: 390px; object-fit: contain;">
+        </div>
+    </div>
+
+    <!-- info peli -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8 text-center">
+            <div class="mb-2">
+                <h4>Nombre completo</h4>
+                <span class="mb-5"><?php echo htmlspecialchars($pelicula->title); ?></span>
+            </div>
+            <div class="mb-2">
+                <h4>Lanzamiento</h4>
+                <span class="mb-5"><?php echo htmlspecialchars($pelicula->release_date); ?></span>
+            </div>
+            <div class="mb-2">
+                <h4>Categoria</h4>
+                <span class="mb-5"><?php echo htmlspecialchars($categoria->nombre); ?></span>
+            </div>
+            <?php if ($this->usuario) { ?>
+                <a href="<?= BASE_URL ?>/eliminarPelicula/<?php echo $pelicula->id; ?>" class="btn btn-danger">Borrar</a>
+                <a href="<?php echo BASE_URL; ?>editarPelicula/<?php echo $pelicula->id; ?>" class="btn btn-warning">Editar</a>
+            <?php } ?>
+        </div>
+    </div>
+</div>

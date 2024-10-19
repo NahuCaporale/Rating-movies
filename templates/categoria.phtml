@@ -1,0 +1,33 @@
+
+<?php if (!empty($shows)) { ?>
+<!-- descripcion de la categoria-->
+<?php      
+if (!empty($desc)) {?>
+    <p class="parrafo text-center" style="padding:21px;"><?php echo htmlspecialchars($desc); ?></p>
+    <?php } ?>
+    <?php foreach ($shows as $show) { ?>
+
+            <div class="d-flex justify-content align-items-center">
+                <div class="text-center mx-auto">
+                    <div class="mb-5 mt-4">
+                        <a href="<?= BASE_URL ?>pelicula/<?php echo $show->id; ?>" class="linkTitle text-decoration-none text-reset "><?php echo htmlspecialchars($show->title); ?></a>
+
+                        <p class="parrafo">Lanzamiento</p>
+                        <span class="m-5"><?php echo htmlspecialchars($show->release_date); ?></span>
+                    </div>
+                    <div class="col-md-4 mb-4" style="width: 18rem;">
+                        <div class="card bg-transparent h-100">
+                            <img src="<?php echo htmlspecialchars($show->image_url); ?>" class="card-img-top img-fluid">
+                        </div>
+                    </div>
+                    <?php if ($this->usuario) { ?>
+
+                        <a href="<?= BASE_URL ?>/eliminarPelicula/<?php echo $show->id; ?>" class="btn btn-danger ms-5">Borrar</a>
+                <?php }
+                } ?>
+
+                </div>
+
+
+            </div>
+        <?php }?>

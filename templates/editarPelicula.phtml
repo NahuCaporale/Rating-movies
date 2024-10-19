@@ -1,0 +1,36 @@
+<h1 class="text-center">Editar Película</h1>
+<form method="POST" action="<?= BASE_URL ?>editarPelicula/<?php echo $pelicula->id; ?>">
+    <div class="col-7">
+        <div class="form-group ">
+            <label class="parrafo" for="titulo">Título:</label>
+            <input class="form-control mx-auto " type="text" name="titulo" id="titulo" value="<?php echo htmlspecialchars($pelicula->title); ?>" required>
+        </div>
+    </div>
+
+
+    <div class="col-7">
+        <div class="form-group ">
+
+            <label class="parrafo" for="fecha">Fecha:</label>
+            <input class="form-control mx-auto " type="date" name="fecha" id="fecha" value="<?php echo $pelicula->release_date; ?>">
+
+
+            <div class="col-7">
+                <div class="form-group">
+                    <label class="parrafo" for="categoria_id">Categoría:</label>
+                    <select name="categoria_id" id="selectCat" class="mt-2" required>
+                        <option value="" disabled selected>Seleccione una categoría</option>
+                        <?php foreach ($categorias as $categoria){ ?>
+                            <option value="<?php echo htmlspecialchars($categoria->id); ?>" <?php echo ($categoria->id == $pelicula->categorie_id) ? 'selected' : ''; ?>>
+                                <?php echo htmlspecialchars($categoria->nombre); ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+                </div>
+            </div>
+            <label class="parrafo" for="imagen">Imagen:</label>
+            <input class="form-control mx-auto " type="text" name="imagen" id="imagen" value="<?php echo htmlspecialchars($pelicula->image_url); ?>">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-warning mt-2">Actualizar Película</button>
+</form>

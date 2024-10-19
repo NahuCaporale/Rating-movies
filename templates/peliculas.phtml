@@ -1,0 +1,23 @@
+<h1 class="text-center">Peliculas</h1>
+
+<ul class="list-group list-group-flush ">
+
+
+    <div class="row row-cols-1 row-cols-md-3 g-5 justify-content-center ">
+        <?php foreach ($peliculas as $pelicula) { ?>
+            <div class="col-md-4 mb-4" style="width: 18rem;">
+                <div class="card bg-transparent h-100">
+                    <!-- imagen con atributos de bootsrtrap -->
+                    <img src="<?php echo htmlspecialchars($pelicula->image_url); ?>" class="card-img-top img-fluid"
+                        alt="Imagen de <?php echo htmlspecialchars($pelicula->title); ?>"
+                        style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title"><a class="catStyle text-decoration-none text-reset" href="pelicula/<?php echo $pelicula->id ?>"><?php echo htmlspecialchars($pelicula->title); ?></h5></a>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+
+
+</ul>   

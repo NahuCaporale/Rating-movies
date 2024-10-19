@@ -1,0 +1,17 @@
+<ul class="list-group list-group-flush ">
+    <p class="mx-auto">Categorias</p>
+    <?php
+
+    foreach ($categorias as $categoria) { ?>
+        <div class="text-center mx-auto">
+            <div class=" d-flex justify-content align-items-center">
+                <a href="categoria/<?php echo $categoria->id; ?>" class="catStyle text-decoration-none text-reset"><?php echo htmlspecialchars($categoria->nombre); ?></a>
+                <?php if ($this->usuario) { ?>
+                    <a href="eliminarCategoria/<?php echo $categoria->id; ?>" class="btn btn-danger ms-5">
+                        Borrar
+                    </a>
+                <?php } ?>
+            </div>
+        </div>
+    <?php } ?>
+</ul>
