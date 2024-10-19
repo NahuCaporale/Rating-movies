@@ -1,9 +1,10 @@
  # Parte dos de el tpe
-Decidimos no hacer al final el sistema de reviews porque sentimos que nos iba a llevar mucho mas tiempo. El deploy de la pagina deberia ser automatico luego de importar la db de el repositorio en mySQL.
+Decidimos no hacer al final el sistema de reviews porque sentimos que nos iba a llevar mucho mas tiempo. El deploy de la pagina deberia ser automatico luego de importar la db de el repositorio en mySQL, y tener el repositorio local dentro de htdocs en la carpeta XAMPP.
 Solo creamos un usuario y contraseña que son los siguientes:
 usuario: webadmin
 contraseña: admin.
-No incluimos un sistema de sign up, porque no lo vimos necesario ya que el enunciado de el tpe no lo requeria.Tambien aclarar que no nos repartimos las tareas como decia el enunciado A o B hicimos los dos un poco de todo.
+No incluimos un sistema de sign up, dejamos solo el usuario administrador el cual se puede hacer por el login.Aclarar que no nos repartimos las tareas como decia el enunciado A o B hicimos ambos un poco de todo.
+Tambien sin querer quedo mezclado un poco de ingles y español.
 
  # Rating de films y tv-shows
 La idea de el sitio es la creacion de un usuario el cual pueda hacer valoraciones de tv-shows o peliculas y sean guardadas en una DB. Las entidades son shows,reviews y el usuario.
