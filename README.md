@@ -1,4 +1,4 @@
- # Parte dos de el tpe:
+ # Parte dos de el tpe
 Decidimos no hacer al final el sistema de reviews porque sentimos que nos iba a llevar mucho mas tiempo. El deploy de la pagina deberia ser automatico luego de importar la db de el repositorio en mySQL.
 solo creamos un usuario y contraseña que son los siguientes:
 usuario: webadmin
