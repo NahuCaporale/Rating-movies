@@ -50,6 +50,6 @@ class categoriasModelo extends Model
     public function actualizarCategoria($id, $nombre, $descripcion)
     {
         $query = $this->db->prepare('UPDATE  categories SET nombre = ?,  descripcion= ? WHERE id = ?');
-        return $query->execute([$nombre, $descripcion,$id]);
+        return $query->execute([$nombre, $descripcion, $id]);
     }
 }

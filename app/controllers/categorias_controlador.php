@@ -12,11 +12,12 @@ class categoriasControlador
         $this->modelo = new categoriasModelo();
     }
     //muestra todas las categorias a traves de el modelo
+    //el form es para agregar una en la seccion categorias, en el home seria falso
     public function mostrarCategorias($form = false)
     {
-        //obtener tareas db
+        //obtener categorias de la db
         $categorias = $this->modelo->obtenerCategorias();
-        //mostrar tareas en vista
+        //mostrar categorias en vista
 
         $this->vista->verCategorias($categorias, $form);
     }
@@ -95,20 +96,20 @@ class categoriasControlador
                 $nombre = $_POST['nombre'];
                 $descripcion = $_POST['descripcion'];
 
-                // actualiza la peli
+                // actualiza la categoria
                 $editar = $this->modelo->actualizarCategoria($id, $nombre, $descripcion);
 
                 if ($editar) {
-                    //si editar es true se edito la pelicula
+                    //si editar es true se edito la categoria
                     header('Location: ' . BASE_URL . 'categorias');
                     exit();
                 } else {
                     //si no salta a este error
-                    return $this->vista->mostrarError("Error al actualizar la categoria.");
+                    return $this->vista->mostrarError("Error al actualizar la película.");
                 }
             }
         } else {
-            $this->vista->mostrarError("Categoria no encontrada.");
+            $this->vista->mostrarError("Película no encontrada.");
         }
     }
 }
